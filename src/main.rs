@@ -1,7 +1,10 @@
+mod data;
 fn main() {
+    let ex = data::export_x();
     // In general, the `{}` will be automatically replaced with any
     // arguments. These will be stringified.
     println!("{} days", 31);
+    println!("Today is {}", "Saturday");
     println!("Today is {}", "Saturday");
 
     // Positional arguments can be used. Specifying an integer inside `{}`
@@ -63,11 +66,8 @@ fn main() {
     // println!("This struct `{}` won't print...", Structure(3));
     // TODO ^ Try uncommenting this line
 
-    // For Rust 1.58 and above, you can directly capture the argument from a
-    // surrounding variable. Just like the above, this will output
-    // "    1", 4 white spaces and a "1".
-    let number1: f64 = 1.0; // is equivalent to 1
-    let number2: f64 = 1.01230; // is equivalent 1.0123
-    let width: usize = 12;
+    let number1: f32 = 1.0; // is equivalent to 1
+    let number2 = 1.01230; // is equivalent 1.0123
+    let width = 12;
     println!("{number1}{number2:#>width$}"); // 1######1.0123
 }
